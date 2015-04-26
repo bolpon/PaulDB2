@@ -1,0 +1,33 @@
+<plugin name='quartz' version='1.0-RC1' grailsVersion='1.2 &gt; 1.3.7'>
+  <author>Sergey Nebolsin</author>
+  <authorEmail>nebolsin@gmail.com</authorEmail>
+  <title>This plugin adds Quartz job scheduling features to Grails application.</title>
+  <description>Quartz plugin allows your Grails application to schedule jobs to be
+executed using a specified interval or cron expression. The underlying
+system uses the Quartz Enterprise Job Scheduler configured via Spring,
+but is made simpler by the coding by convention paradigm.
+</description>
+  <documentation>http://grails.org/plugin/quartz</documentation>
+  <type>QuartzGrailsPlugin</type>
+  <resources>
+    <resource>DefaultQuartzConfig</resource>
+    <resource>QuartzBootStrap</resource>
+    <resource>grails.plugins.quartz.JobManagerService</resource>
+  </resources>
+  <repositories>
+    <repository name='grailsCentral' url='http://plugins.grails.org' />
+    <repository name='http://repo.grails.org/grails/plugins' url='http://repo.grails.org/grails/plugins/' />
+    <repository name='http://repo.grails.org/grails/core' url='http://repo.grails.org/grails/core/' />
+    <repository name='grailsCore' url='http://svn.codehaus.org/grails/trunk/grails-plugins' />
+    <repository name='mavenCentral' url='http://repo1.maven.org/maven2/' />
+  </repositories>
+  <dependencies>
+    <compile>
+      <dependency group='org.quartz-scheduler' name='quartz' version='1.8.4' />
+      <dependency group='org.hibernate' name='hibernate-core' version='3.3.1.GA' />
+    </compile>
+  </dependencies>
+  <plugins />
+  <runtimePluginRequirements />
+  <behavior />
+</plugin>

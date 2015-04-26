@@ -1,0 +1,993 @@
+html * {
+    margin: 0;
+    /*padding: 0; SELECT NOT DISPLAYED CORRECTLY IN FIREFOX */
+
+}
+
+/* GENERAL */
+
+.spinner {
+    padding: 5px;
+    position: absolute;
+    right: 0;
+}
+
+body {
+    width: 100%;
+    min-width:1150px;
+    background: #fff;
+    color: #333;
+    font: 11px verdana, arial, helvetica, sans-serif;
+	text-rendering: optimizelegibility;
+}
+
+#loading{
+    position:fixed;
+    width:200px;
+    height:50px;
+    top:300px;
+    left:40%;
+    background-color:#fff ;
+    border: 1px solid #ddd;
+    text-align:center;
+}
+
+
+a:link, a:visited{
+    color: #666;
+    font-weight: bold;
+    text-decoration: none;
+} 
+
+a:hover{
+
+    color: #666;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+a.nonBold{
+
+    font-weight: 200;
+}
+
+
+a.whiteLink{
+
+    color:#fff;
+    font-weight:normal;
+}
+
+a.whiteLink:hover{
+
+    text-decoration:underline;
+}
+
+a.whiteLink:visited{
+    color:#fff;
+    font-weight:normal;
+}
+
+.listLink:hover{
+
+    text-decoration:underline;
+}
+
+a.edit{
+
+    background: transparent url(../images/skin/database_edit.png) 5px 50% no-repeat;
+    color:#333;
+    padding-left:28px;
+    padding-top:2px;
+    padding-bottom:2px;
+}
+
+a.delete{
+
+    background: transparent url(../images/skin/database_delete.png) 5px 50% no-repeat;
+    padding-left: 28px;
+    color:#333;
+    padding-top:2px;
+    padding-bottom:2px;
+}
+
+a.wikilink {
+	color: #333;
+	font-weight: normal;
+}
+a.wikilink:hover {
+	text-decoration: none;
+}
+a.wikilink:hover span {
+	border-bottom: thin dashed #333;
+}
+
+h1 {
+    color: #006dba;
+    font-weight: normal;
+    font-size: 16px;
+    margin: .8em 0 .3em 0;
+}
+
+h2 {
+    color: #006dba;
+    font-weight: normal;
+    font-size: 14px;
+    margin: .8em 0 .3em 0;
+}
+
+ul {
+    padding-left: 0px;
+}
+
+input, select, textarea {
+    background-color: #fcfcfc;
+    border: 1px solid #ccc;
+    font: 11px verdana, arial, helvetica, sans-serif;
+    margin: 2px 0;
+    padding: 2px 4px;
+}
+
+input[type="submit"]:hover{
+
+    border: 1px solid #444;
+}
+
+select {
+   padding: 2px 2px 2px 0;
+}
+textarea {
+	width: 450px; 
+	height: 150px;
+	vertical-align: top;
+}
+
+textarea.small{
+	width: 250px; 
+
+}
+textarea.width320{
+	width: 320px;
+
+}
+
+input:focus, select:focus, textarea:focus {
+    border: 1px solid #b2d1ff;
+}
+
+.body {
+    float:left;
+
+    margin: 0 15px 10px 15px;
+    width: 95%;
+}
+
+/* NAVIGATION MENU */
+
+.nav {
+    background: #fff url(../images/skin/shadow.jpg) bottom repeat-x;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    /*border-style: solid none solid none;*/
+
+    height:20px;
+}
+
+.menuButton {
+    font-size: 10px;
+    padding: 0 5px;
+}
+.menuButton a {
+    color: #333;
+    padding: 4px 6px;
+}
+.menuButton a.home {
+    background: url(../images/skin/house.png) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+.menuButton a.list {
+    background: url(../images/skin/database_table.png) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+.menuButton a.create {
+    background: url(../images/skin/database_add.png) center left no-repeat;
+    color: #333;
+    padding-left: 25px;
+}
+
+/* MESSAGES AND ERRORS */
+
+.message {
+    background: #f3f8fc url(../images/skin/information.png) 8px 50% no-repeat;
+    border: 1px solid #b2d1ff;
+    color: #006dba;
+    margin: 10px 0 5px 0;
+    padding: 5px 5px 5px 30px
+}
+
+div.errors {
+    background: #fff3f3;
+    border: 1px solid red;
+    color: #cc0000;
+    margin: 10px 0 5px 0;
+    padding: 5px 0 5px 0;
+}
+div.errors ul {
+    list-style: none;
+    padding: 0;	
+}
+div.errors li {
+	background: url(../images/skin/exclamation.png) 8px 0% no-repeat;
+    line-height: 16px;
+    padding-left: 30px;
+}
+
+td.errors select {
+    border: 1px solid red;
+}
+td.errors input {
+    border: 1px solid red;
+}
+
+/* TABLES */
+
+table {
+    border: 1px solid #ccc;
+    width: 100%
+}
+tr {
+    border: 0;
+}
+
+td.header{
+   background: #fff url(../images/skin/shadow.jpg);
+   color: #666;
+   line-height: 17px;
+   padding: 2px 6px;
+}
+
+td, th {
+    font: 11px verdana, arial, helvetica, sans-serif;
+    line-height: 12px;
+    padding: 5px 6px;
+    text-align: left;
+    vertical-align: top;
+}
+
+
+
+
+.noPadding{
+    padding:0;
+}
+th {
+    background: #fff url(../images/skin/shadow.jpg);
+    color: #666;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 17px;
+    padding: 2px 6px;
+}
+th a:link, th a:visited, th a:hover {
+    color: #333;
+    display: block;
+    font-size: 10px;
+    text-decoration: none;
+    width: 100%;
+}
+th.asc a, th.desc a {
+    background-position: right;
+    background-repeat: no-repeat;
+}
+th.asc a {
+    background-image: url(../images/skin/sorted_asc.gif);
+}
+th.desc a {
+    background-image: url(../images/skin/sorted_desc.gif);
+}
+
+.odd {
+    background: #eeeef0;
+}
+.even {
+    background: #fff;
+}
+
+.tableList{
+
+    width:100%;
+}
+
+
+/*tables in show (projekte->show z.B.) */
+
+.tableShow{
+
+    border:1px solid #bbb;
+    padding:0px;
+    margin:0;
+    width:60%;
+}
+
+.tableShow td{
+    padding-left: 2px;
+    padding-bottom:2px;
+    
+}
+
+.tableShow tr{
+
+    padding:0;
+}
+
+.fixWidth{
+
+   width:450px; 
+}
+
+.fixWidth600{
+
+   width:600px; 
+}
+
+.personenCreate {
+
+    border:0px solid black;
+    width:170px;
+    padding:0;
+    margin:0;
+    margin-left: -2px;
+}
+
+.personenCreate tr{
+
+    color:#f00;
+    padding:0;
+    margin:0;
+}
+
+.personenCreate tr td {
+
+    padding:0;
+    margin:0;
+}
+
+.personenCreateBig {
+
+    border:0px solid black;
+    width:695px;
+    padding:0;
+    margin:0;
+    margin-left: -2px;
+}
+
+.personenCreateBig tr{
+
+    color:#f00;
+    padding:0;
+    margin:0;
+}
+
+.personenCreateBig tr td {
+
+    padding:0;
+    margin:0;
+}
+
+.postenListe{
+
+    width:350px;
+    height:250px;
+   /* background-color: #ddd;*/
+
+}
+
+.bilderListe{
+
+    width:200px;
+    height:150px;
+
+}
+
+.postenListe div.postenListeFoto {
+    text-align:center;
+    width:100%;
+}
+
+.bilderListe div.bilderListeFoto {
+    text-align:center;
+    width:100%;
+}
+
+.postenListe div.postenListeFoto img{
+  -moz-box-shadow: 5px 5px 5px #ccc;
+  -webkit-box-shadow: 5px 5px 5px #ccc;
+  box-shadow: 5px 5px 5px #ccc;
+
+}
+
+.postenListe div.postenListeBeschreibung {
+    padding-top:10px;
+    width:100%;
+    text-align:center;
+
+}
+
+.bilderListe div.bilderListeFoto img{
+  -moz-box-shadow: 5px 5px 5px #ccc;
+  -webkit-box-shadow: 5px 5px 5px #ccc;
+  box-shadow: 5px 5px 5px #ccc;
+
+}
+
+.bilderListe div.bilderListeBeschreibung {
+    padding-top:10px;
+    width:100%;
+    text-align:center;
+
+}
+
+
+td.postenListeTD{
+
+    border: 0px solid gray;
+}
+
+
+/* LIST */
+
+#listContent{
+
+
+    width:100%;
+}
+
+
+
+
+.list {
+
+    width: 78%;
+    float: left;
+}
+
+.list table {
+    border-collapse: collapse;
+}
+.list th, .list td {
+    border-left: 1px solid #ddd;
+}
+.list th:hover, .list tr:hover {
+    background: #b2d1ff;
+}
+
+.postenListMain{
+   width: 78%;
+   float: left;
+
+}
+
+.postenListMain table{
+    border-spacing:4px;
+}
+
+.noDeco{
+
+    list-style:none;
+}
+
+.noDeco li{
+
+    padding-bottom:3px
+}
+
+/* PAGINATION */
+
+.paginateButtons {
+    background: #fff url(../images/skin/shadow.jpg) bottom repeat-x;
+    border: 1px solid #ccc;
+    border-top: 0;
+    color: #666;
+    font-size: 10px;
+    overflow: hidden;
+    padding: 10px 3px;
+    
+}
+.paginateButtons a {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-color: #ccc #aaa #aaa #ccc;
+    color: #666;
+    margin: 0 3px;
+    padding: 2px 6px;
+}
+.paginateButtons span {
+    padding: 2px 3px;
+}
+
+/* DIALOG */
+
+.createDialog{
+
+    width: 400px;
+    padding: 5px;
+}
+
+.dialog table {
+    padding: 5px 0;
+}
+
+.prop {
+    padding: 5px;
+}
+.prop .name {
+    text-align: left;
+    width: 15%;
+    white-space: nowrap;
+}
+.prop .value {
+    text-align: left;
+    width: 85%;
+}
+
+/* ACTION BUTTONS */
+
+.buttons {
+    background: #fff url(../images/skin/shadow.jpg) bottom repeat-x;
+    border: 1px solid #ccc;
+    color: #666;
+    font-size: 10px;
+    margin-top: 5px;
+    overflow: hidden;
+    padding: 0;
+    padding-top:0px;
+    margin-bottom:20px;
+    height:20px;
+}
+
+.buttons input {
+    background: #fff;
+    border: 0;
+    color: #333;
+    cursor: pointer;
+    font-size: 10px;
+    font-weight: bold;
+    margin-left: 3px;
+    overflow: visible;
+    padding: 2px 6px;
+}
+.buttons input.delete {
+    background: transparent url(../images/skin/database_delete.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
+.buttons input.edit {
+    background: transparent url(../images/skin/database_edit.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
+.buttons input.save {
+    background: transparent url(../images/skin/database_save.png) 5px 50% no-repeat;
+    padding-left: 28px;
+}
+
+
+.buttonLinks{
+   background: #fff url(../images/skin/shadow.jpg) bottom repeat-x;
+    border: 1px solid #ccc;
+    color: #666;
+    font-size: 10px;
+    margin-top: 5px;
+    overflow: hidden;
+    padding: 0;
+    padding-top:5px;
+    margin-bottom:20px;
+    height:17px;
+}
+
+/* SCORING */
+.scoring {
+    font-size: 12px;
+    color: black;
+    margin-left: 12px;
+}
+
+
+/* User stuff */
+#mymenubar{
+    
+}
+
+/* Table Unternehmen->show->kontakte */
+
+table .unternehmenKontakt{
+    padding:0px;
+    margin:0px;
+    border: 0px;
+    
+}
+
+table .unternehmenKontakt > tbody > tr > td{
+    padding:0px;
+    margin:0px;
+    padding-right:5px;
+    padding-bottom:5px;
+}
+
+table .unternehmenKontaktEinzeln{
+     padding:0px;
+     margin:0px;
+
+}
+
+.unternehmenKontaktHeading{
+
+    background-color:#006dba;
+    margin-top:0px;
+    padding-top:0px;
+    font-weight:bold;
+    color:#fff;
+}
+
+
+
+/* div heading of pages */
+
+
+#heading{
+
+
+    width: 100%;
+    min-width:900px;
+    height: 38px;
+    background-color: #90b0d0;
+    
+
+    padding-top: 3px;
+
+}
+
+#headNavigation{
+    width:100%;
+    min-width:900px;
+    padding-top: 6px;
+
+
+}
+
+#headmenu{
+
+    height: 15px;
+    width:800px;
+    margin-left: 15px;
+}
+
+#headMenu ul li {
+    padding-right: 20px;
+    display: block;
+    position: relative;
+    float:left;
+    
+    list-style: none;
+
+}
+
+#headMenu ul li ul{
+
+    
+    
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    
+    
+
+    
+    
+}
+
+li > ul {
+      top: auto;
+      left: auto;
+
+}
+
+#headMenu ul li ul{
+
+    float: none;
+    
+}
+
+#headMenu ul li:hover ul{
+
+    list-style: none;
+    display:block;
+    
+}
+
+#headMenu ul li ul li{
+
+    top:7px;
+    padding-top:5px;
+    padding-bottom:5px;
+    min-width: 150px;
+    height: 15px;
+    display: block;
+    padding-left: 5px;
+    padding-right: 5px;
+    background: #fff url(../images/skin/shadow.jpg) bottom repeat-x;
+    border: 1px solid #ccc;
+    
+    
+}
+
+#headMenu ul li ul li a:hover{
+
+    color: #f00;
+}
+#footer{
+
+    width: 100%;
+    height: 40px;
+    background-color: #90b0d0;
+}
+
+/*Personen Show Foto*/
+
+#personenShowFoto{
+    position:absolute;
+    left: 70%;
+
+    top: 135px;
+    /*background-color: #eee;
+
+    width:300px;
+    height:180px;            */
+}
+
+#personenShowFoto:before,
+#personenShowFoto:after {
+    position: absolute;
+    content:'';
+    background-color: transparent;
+    bottom: 12px;
+    width: 70%;
+    height: 60px;
+    z-index: -1;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+#personenShowFoto:before {
+
+    -webkit-box-shadow: -14px 12px 10px rgba(2, 2, 2, 0.6);
+    -webkit-transform: matrix(1, -0.05, -0.2, 1, 0, 0);
+    -moz-box-shadow: -14px 12px 10px rgba(2, 2, 2, 0.6);
+    -moz-transform: matrix(1, -0.05, -0.2, 1, 0, 0);
+    box-shadow: -14px 12px 10px rgba(2, 2, 2, 0.6);
+    transform: matrix(1, -0.05, -0.2, 1, 0, 0);
+    left: 15px;
+}
+#personenShowFoto:after {
+    -webkit-box-shadow: 14px 12px 10px rgba(2, 2, 2, 0.6);
+    -webkit-transform: matrix(1, 0.05, 0.2, 1, 0, 0);
+    -moz-box-shadow: 14px 12px 10px rgba(2, 2, 2, 0.6);
+    -moz-transform: matrix(1, 0.05, 0.2, 1, 0, 0);
+    box-shadow: 14px 12px 10px rgba(2, 2, 2, 0.6);
+    transform: matrix(1, 0.05, 0.2, 1, 0, 0);
+    right: 15px;
+}
+
+#personenShowFotoImg{
+    border: 5px solid white;
+    cursor:pointer;
+}
+
+#personShowUploadFotoDialog{
+
+    display:none ;
+
+}
+
+
+
+/* LogoutMenu oben recht im Header */
+
+#perMenu {
+
+    float:right;
+    padding-top:20px;
+    padding-right:32px;
+    font-size:11px;
+    color:#fff;
+}
+
+#perMenu a {
+
+    font-size:11px;
+    color:#fff;
+    text-decoration:none;
+    padding-right:5px;
+}
+
+#perMenu a:hover {
+
+    text-decoration:underline;
+}
+
+#loginFormDiv{
+
+    /*display: none;*/
+    position: relative;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    top:200px;
+    
+}
+
+#personSearch{
+
+    width:400px;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.widgetsRight{
+    /*float: right;*/
+    width: 20%;
+    margin-left: 80%;
+    
+}
+
+.widget{
+
+    margin-bottom: 10px;
+    min-height: 100px;
+    border: 1px dotted #ccc;
+    min-width:250px;
+}
+
+.dashWidget1{
+
+    width: 300px;
+    padding: 10px;
+    margin: 10px;
+    min-height: 100px;
+    border: 1px dotted #ccc;
+    float:left;
+}
+
+.dashWidget2{
+
+    width: 400px;
+    padding: 10px;
+    margin: 10px;
+    min-height: 100px;
+    border: 1px dotted #ccc;
+    float:left;
+}
+
+#mainContent{
+
+    
+    margin: 10px;
+    
+}
+
+.error, td.error a {
+    color: #f00;
+    font-weight:bold;
+}
+
+
+input.rounded {
+
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+
+}
+
+input.inputKurz{
+
+
+    width:85px;
+
+}
+
+/* modaler dialog hidden*/
+
+.hidden{
+
+    display:none;
+}
+
+
+
+#quicksearch {
+
+    position:relative;
+    top: -15px;
+    float:right;
+    padding-right:20px;
+    width:250px;
+    
+}
+
+#quicksearchLabel{
+
+  float:left;
+  padding-right:8px;  
+}
+
+#quicksearch input {
+
+    padding: 0px;
+    margin: 0px;
+    padding-left:5px;
+    height:1.7em;
+
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    background-color:#fff; 
+}
+
+/*quicksearch kategorien */
+.ui-autocomplete-category{
+        font-weight:bold;
+        padding-left:5px;
+		background-color:#dde;
+        font-size:14px;
+		line-height:1.5;
+
+}
+
+
+
+
+    #feedback { font-size: 1.4em; }
+	#unternehmenBetreuerSelect .ui-selecting { background: #FECA40; }
+	#unternehmenBetreuerSelect .ui-selected { background: #F39814; color: white; }
+	#unternehmenBetreuerSelect { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+	#unternehmenBetreuerSelect li { margin: 3px; padding: 0.4em; font-size: 1.4em; height: 18px; }
+
+
+
+.multiselect {
+	
+	width: 450px;
+	height:  200px;
+}
+
+li.ui-menu-item{
+    background-color:#fff;
+}
+
+.ui-multiselect { border: solid 1px; font-size: 0.8em; }
+.ui-multiselect ul { -moz-user-select: none; }
+.ui-multiselect li { margin: 0; padding: 0; cursor: default; line-height: 20px; height: 20px; font-size: 11px; list-style: none; }
+.ui-multiselect li a { color: #999; text-decoration: none; padding: 0; display: block; float: left; cursor: pointer;}
+.ui-multiselect li.ui-draggable-dragging { padding-left: 10px; }
+
+.ui-multiselect div.selected { position: relative; padding: 0; margin: 0; border: 0; float:left; }
+.ui-multiselect ul.selected { position: relative; padding: 0; overflow: auto; overflow-x: hidden; background: #fff; margin: 0; list-style: none; border: 0; position: relative; width: 100%; }
+.ui-multiselect ul.selected li { }
+
+.ui-multiselect div.available { position: relative; padding: 0; margin: 0; border: 0; float:left; border-left: 1px solid; }
+.ui-multiselect ul.available { position: relative; padding: 0; overflow: auto; overflow-x: hidden; background: #fff; margin: 0; list-style: none; border: 0; width: 100%; }
+.ui-multiselect ul.available li { padding-left: 10px; }
+
+.ui-multiselect .ui-state-default { border: none; margin-bottom: 1px; position: relative; padding-left: 20px;}
+.ui-multiselect .ui-state-hover { border: none; }
+.ui-multiselect .ui-widget-header {border: none; font-size: 11px; margin-bottom: 1px;}
+
+.ui-multiselect .add-all { float: right; padding: 7px;}
+.ui-multiselect .remove-all { float: right; padding: 7px;}
+.ui-multiselect .search { float: left; padding: 4px;}
+.ui-multiselect .count { float: left; padding: 7px;}
+
+.ui-multiselect li span.ui-icon-arrowthick-2-n-s { position: absolute; left: 2px; }
+.ui-multiselect li a.action { position: absolute; right: 2px; top: 2px; }
+
+.ui-multiselect input.search { height: 14px; padding: 1px; opacity: 0.5; margin: 4px; width: 100px; }

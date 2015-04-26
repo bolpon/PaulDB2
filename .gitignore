@@ -3,3 +3,5 @@
 .settings/
 debug/
 target-eclipse/
+grails-app/conf/Config.groovy
+target/

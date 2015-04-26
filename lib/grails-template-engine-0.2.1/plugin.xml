@@ -1,0 +1,24 @@
+<plugin name='grails-template-engine' version='0.2.1' grailsVersion='1.1 &gt; *'>
+  <author>Peter Delahunty</author>
+  <authorEmail>peter.delahunty@solution51.com</authorEmail>
+  <title>Grails Template Engine</title>
+  <description>\
+This plugin exposes the GSP engine as a service. It allows you use the gsp template engine to render gsp out side the standard response.
+</description>
+  <documentation>http://grails.org/GrailsTemplateEngine+Plugin</documentation>
+  <type>GrailsTemplateEngineGrailsPlugin</type>
+  <resources>
+    <resource>GrailsTemplateEngineService</resource>
+  </resources>
+  <repositories>
+    <repository name='grailsCentral' url='http://plugins.grails.org' />
+    <repository name='http://repo.grails.org/grails/plugins' url='http://repo.grails.org/grails/plugins/' />
+    <repository name='http://repo.grails.org/grails/core' url='http://repo.grails.org/grails/core/' />
+    <repository name='grailsCore' url='http://svn.codehaus.org/grails/trunk/grails-plugins' />
+    <repository name='mavenCentral' url='http://repo1.maven.org/maven2/' />
+  </repositories>
+  <dependencies />
+  <plugins />
+  <runtimePluginRequirements />
+  <behavior />
+</plugin>

@@ -1,0 +1,70 @@
+/* Navigation */
+#widget-statistik ul {
+	list-style-type: none;
+}
+
+#widget-statistik > ul > li {
+	margin-top: 2em;
+}
+#widget-statistik > ul > li > ul {
+	padding-left: .8em;
+}
+
+/* Statistiken */
+.statistikMitGrafik {
+	position: relative;
+}
+.statistik table {
+	clear: left;
+}
+.statistikMitGrafik table {
+	width: 50%;
+}
+.statistik.halfNarrow table {
+	width: 50%;
+}
+.statistik.narrow table {
+	width: 20%;
+}
+
+.statistik tfoot td, .statistik tfoot td:hover {
+	font-weight: bold;
+	background: silver;
+}
+
+.statistikMitGrafik .grafikContainer {
+	width: 42%;
+	height: 36em;
+	position: absolute;
+	top: 4em;
+	right: 0;
+	text-align: center;
+}
+
+/* Optionen */
+#options {
+	width: 98%;
+	float: left;
+	margin: 1.6em 0 .5em 2%;
+}
+.statistikMitGrafik #options {
+	width: 49%;
+	margin-left: 1%;
+}
+#options .option {
+	float: left;
+	margin: 0 3em .5em 0;
+}
+#options .option.singleLine {
+	float: none;
+	margin-right: 0;
+}
+#options .option input {
+	vertical-align: baseline;
+	margin-right: .2em;
+}
+#options .export {
+	display: block;
+	clear: both;
+	margin: 1em 0;
+}
