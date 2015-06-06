@@ -793,7 +793,8 @@ class UnternehmenController {
             try {
                 def Loesche = unternehmenInstance.mitarbeiter.toList()
                 Loesche.each{
-                   unternehmenInstance.removeFromMitarbeiter(it)
+					unternehmenInstance.removeFromMitarbeiter(it)
+					it.delete(flush:true)
                 }
                 Loesche = unternehmenInstance.betreuer.toList()
                 Loesche.each{
@@ -811,7 +812,7 @@ class UnternehmenController {
                 redirect(action: "list")
             }
             catch (org.springframework.dao.DataIntegrityViolationException e) {
-                log.error("Fehler beim löschen von Unternehmen "+ unternehmenInstance.name)
+                log.error("Fehler beim löschen von Unternehmen "+ unternehmenInstance.name + e)
                 flash.message = "${message(code: 'default.not.deleted.message', args: [message(code: 'unternehmen.label', default: 'Unternehmen'), params.id])}"
                 redirect(action: "show", id: params.id)
             }
